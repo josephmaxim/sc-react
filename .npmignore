@@ -1,0 +1,5 @@
+node_modules/
+.travis.yml
+.vscode
+.DS_Store
+npm-debug.log
