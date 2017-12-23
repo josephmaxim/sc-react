@@ -1,0 +1,35 @@
+{
+  "name": "sc-react",
+  "version": "0.1.0",
+  "description": "A react library for creating non-rectangular/slanted container divs.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josephmaxim/sc-react.git"
+  },
+  "author": "Joseph Maxim <josephmdagunan@gmail.com> (https://josephmaxim.io)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/josephmaxim/sc-react/issues"
+  },
+  "homepage": "https://github.com/josephmaxim/sc-react#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.5.1"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "styled-components": "^2.3.3",
+    "webpack": "^3.10.0"
+  }
+}
