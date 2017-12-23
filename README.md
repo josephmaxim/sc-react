@@ -17,26 +17,30 @@ import SkewedContainer from 'sc-react';
 ### Example
 ```
 export default class extends React.Component{
-	render(){
-		return(
-			<SkewedContainer>
-				Your code here
-			</SkewedContainer>
-		)
-	}
+    render(){
+        return(
+            <div>
+                <SkewedContainer
+                top="left || right"  
+                bottom="left || right"
+                bgColor="blue"  
+                >
+                    {/* YOUR CODE HERE */}
+                </SkewedContainer>
+            </div>
+        )
+    }
 }
 ```
 
 ### Properties
 ```
-SkewedContainer.PropTypes = {
+SkewedContainer.propTypes = {
     className: PropTypes.string,
-    style: PropTypes.array,
-    topLeft: PropTypes.bool,
-    topRight: PropTypes.bool,
-    bottomLeft: PropTypes.bool,
-    bottomRight: Proptypes.bool,
-    image: PropTypes.any,
+    style: PropTypes.object,
+    top: PropTypes.string,
+    bottom: PropTypes.string,
+    noMargin : PropTypes.bool,
     bgColor: PropTypes.string
 }
 ```
