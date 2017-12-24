@@ -4,7 +4,7 @@
   "description": "A react library for creating non-rectangular/slanted container divs.",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node node_modules/.bin/mocha --require babel-core/register test/test.js",
     "start": "webpack --watch",
     "build": "webpack"
   },
@@ -24,7 +24,12 @@
     "babel-loader": "^7.0.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
-    "babel-preset-env": "^1.5.1"
+    "babel-preset-env": "^1.5.1",
+    "enzyme": "^3.2.0",
+    "expect": "^22.0.3",
+    "mocha": "^4.0.1",
+    "react-addons-test-utils": "^15.6.2",
+    "react-dom": "^16.2.0"
   },
   "dependencies": {
     "prop-types": "^15.6.0",
