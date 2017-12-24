@@ -50,8 +50,8 @@ export default class SkewedContainer extends React.Component{
             width: 100%;
             position: relative;
             background-color: ${this.props.bgColor};
-
             z-index: 2;
+            min-height: 100px;
 
             &:before{
                 ${commonStyling}

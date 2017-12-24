@@ -1,7 +1,16 @@
 {
   "name": "sc-react",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A react library for creating non-rectangular/slanted container divs.",
+  "keywords": [
+    "react",
+    "skewed",
+    "skewed container",
+    "skewed div",
+    "styled component",
+    "skewed component",
+    "webpack"
+  ],
   "main": "dist/index.js",
   "scripts": {
     "test": "node node_modules/.bin/mocha --require babel-core/register test/test.js",

@@ -498,7 +498,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n            ', '\n            width: 100%;\n            position: relative;\n            background-color: ', ';\n\n            z-index: 2;\n\n            &:before{\n                ', '\n                ', '\n            }\n            &:after {\n                ', '\n                ', '\n            }\n        '], ['\n            ', '\n            width: 100%;\n            position: relative;\n            background-color: ', ';\n\n            z-index: 2;\n\n            &:before{\n                ', '\n                ', '\n            }\n            &:after {\n                ', '\n                ', '\n            }\n        ']),
+var _templateObject = _taggedTemplateLiteral(['\n            ', '\n            width: 100%;\n            position: relative;\n            background-color: ', ';\n            z-index: 2;\n            min-height: 100px;\n\n            &:before{\n                ', '\n                ', '\n            }\n            &:after {\n                ', '\n                ', '\n            }\n        '], ['\n            ', '\n            width: 100%;\n            position: relative;\n            background-color: ', ';\n            z-index: 2;\n            min-height: 100px;\n\n            &:before{\n                ', '\n                ', '\n            }\n            &:after {\n                ', '\n                ', '\n            }\n        ']),
     _templateObject2 = _taggedTemplateLiteral(['\n            width: 100%;\n        '], ['\n            width: 100%;\n        ']);
 
 var _react = __webpack_require__(4);
@@ -2493,16 +2493,27 @@ ThemeProvider.contextTypes = (_ThemeProvider$contex = {}, _ThemeProvider$contex[
 var STATIC_EXECUTION_CONTEXT = {};
 
 var _StyledComponent = (function (ComponentStyle, constructWithOptions) {
-  /* We depend on components having unique IDs */
   var identifiers = {};
+
+  /* We depend on components having unique IDs */
   var generateId = function generateId(_displayName, parentComponentId) {
     var displayName = typeof _displayName !== 'string' ? 'sc' : escape(_displayName);
 
-    var nr = (identifiers[displayName] || 0) + 1;
-    identifiers[displayName] = nr;
+    var componentId = void 0;
 
-    var hash = ComponentStyle.generateName(displayName + nr);
-    var componentId = displayName + '-' + hash;
+    /**
+     * only fall back to hashing the component injection order if
+     * a proper displayName isn't provided by the babel plugin
+     */
+    if (!_displayName) {
+      var nr = (identifiers[displayName] || 0) + 1;
+      identifiers[displayName] = nr;
+
+      componentId = displayName + '-' + ComponentStyle.generateName(displayName + nr);
+    } else {
+      componentId = displayName + '-' + ComponentStyle.generateName(displayName);
+    }
+
     return parentComponentId !== undefined ? parentComponentId + '-' + componentId : componentId;
   };
 
