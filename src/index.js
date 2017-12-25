@@ -5,14 +5,14 @@ import styled from 'styled-components';
 export default class SkewedContainer extends React.Component{
     render(){
         var skew = (propValue, position) => {
-            var val = "", skewYDeg = "", skewPosition = "";
+            var val = "", skewYDeg = "", skewPosition = "", skewProp = this.props.skew;
             switch(propValue){
                 case "left":
-                    position === 'top' ? skewYDeg = "-3deg" : skewYDeg = "3deg";
+                    position === 'top' ? skewYDeg = -skewProp : skewYDeg = skewProp;
                     skewPosition = "left";
                     break;
                 case "right":
-                    position === 'top' ? skewYDeg = "3deg" : skewYDeg = "-3deg";
+                    position === 'top' ? skewYDeg = skewProp : skewYDeg = -skewProp;
                     skewPosition = "right";
                     break;
                 default:
@@ -20,7 +20,7 @@ export default class SkewedContainer extends React.Component{
                     skewPosition = "";
                     break;
             }
-            val = `${position}:0; transform-origin: ${skewPosition} ${position}; transform: skewY(${skewYDeg});`;
+            val = `${position}:0; transform-origin: ${skewPosition} ${position}; transform: skewY(${skewYDeg}Deg);`;
             console.log(val);
             return val;
         }
@@ -51,7 +51,7 @@ export default class SkewedContainer extends React.Component{
             position: relative;
             background-color: ${this.props.bgColor};
             z-index: 2;
-            min-height: 100px;
+            min-height: 200px;
 
             &:before{
                 ${commonStyling}
@@ -83,7 +83,8 @@ SkewedContainer.propTypes = {
     top: PropTypes.string,
     bottom: PropTypes.string,
     noMargin : PropTypes.bool,
-    bgColor: PropTypes.string
+    bgColor: PropTypes.string,
+    skew: PropTypes.number
 }
 
 SkewedContainer.defaultProps = {
@@ -92,5 +93,6 @@ SkewedContainer.defaultProps = {
     top: '',
     bottom: '',
     noMargin : false,
-    bgColor: 'grey'
+    bgColor: 'grey',
+    skew: 3
 }

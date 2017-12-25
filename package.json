@@ -1,6 +1,6 @@
 {
   "name": "sc-react",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A react library for creating non-rectangular/slanted container divs.",
   "keywords": [
     "react",

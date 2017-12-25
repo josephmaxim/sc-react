@@ -10,7 +10,8 @@ describe('Component: SkewedContainer', () => {
             className:"",
             noMargin:false,
             style:{},
-            top:""
+            top:"",
+            skew: 3
     }
     it('render without errors', () => {
         expect(
