@@ -27,7 +27,7 @@ export default class extends React.Component{
                 <SkewedContainer
                 top="left || right"  
                 bottom="left || right"
-                bgColor="blue"  
+                bgColor="skyblue"  
                 >
                     {/* YOUR CODE HERE */}
                 </SkewedContainer>
@@ -46,5 +46,6 @@ SkewedContainer.propTypes = {
     bottom: PropTypes.string,
     noMargin : PropTypes.bool,
     bgColor: PropTypes.string
+    skew: PropTypes.Number
 }
 ```

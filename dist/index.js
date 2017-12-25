@@ -498,7 +498,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n            ', '\n            width: 100%;\n            position: relative;\n            background-color: ', ';\n            z-index: 2;\n            min-height: 100px;\n\n            &:before{\n                ', '\n                ', '\n            }\n            &:after {\n                ', '\n                ', '\n            }\n        '], ['\n            ', '\n            width: 100%;\n            position: relative;\n            background-color: ', ';\n            z-index: 2;\n            min-height: 100px;\n\n            &:before{\n                ', '\n                ', '\n            }\n            &:after {\n                ', '\n                ', '\n            }\n        ']),
+var _templateObject = _taggedTemplateLiteral(['\n            ', '\n            width: 100%;\n            position: relative;\n            background-color: ', ';\n            z-index: 2;\n            min-height: 200px;\n\n            &:before{\n                ', '\n                ', '\n            }\n            &:after {\n                ', '\n                ', '\n            }\n        '], ['\n            ', '\n            width: 100%;\n            position: relative;\n            background-color: ', ';\n            z-index: 2;\n            min-height: 200px;\n\n            &:before{\n                ', '\n                ', '\n            }\n            &:after {\n                ', '\n                ', '\n            }\n        ']),
     _templateObject2 = _taggedTemplateLiteral(['\n            width: 100%;\n        '], ['\n            width: 100%;\n        ']);
 
 var _react = __webpack_require__(4);
@@ -540,14 +540,15 @@ var SkewedContainer = function (_React$Component) {
             var skew = function skew(propValue, position) {
                 var val = "",
                     skewYDeg = "",
-                    skewPosition = "";
+                    skewPosition = "",
+                    skewProp = _this2.props.skew;
                 switch (propValue) {
                     case "left":
-                        position === 'top' ? skewYDeg = "-3deg" : skewYDeg = "3deg";
+                        position === 'top' ? skewYDeg = -skewProp : skewYDeg = skewProp;
                         skewPosition = "left";
                         break;
                     case "right":
-                        position === 'top' ? skewYDeg = "3deg" : skewYDeg = "-3deg";
+                        position === 'top' ? skewYDeg = skewProp : skewYDeg = -skewProp;
                         skewPosition = "right";
                         break;
                     default:
@@ -555,7 +556,7 @@ var SkewedContainer = function (_React$Component) {
                         skewPosition = "";
                         break;
                 }
-                val = position + ':0; transform-origin: ' + skewPosition + ' ' + position + '; transform: skewY(' + skewYDeg + ');';
+                val = position + ':0; transform-origin: ' + skewPosition + ' ' + position + '; transform: skewY(' + skewYDeg + 'Deg);';
                 console.log(val);
                 return val;
             };
@@ -605,7 +606,8 @@ SkewedContainer.propTypes = {
     top: _propTypes2.default.string,
     bottom: _propTypes2.default.string,
     noMargin: _propTypes2.default.bool,
-    bgColor: _propTypes2.default.string
+    bgColor: _propTypes2.default.string,
+    skew: _propTypes2.default.number
 };
 
 SkewedContainer.defaultProps = {
@@ -614,7 +616,8 @@ SkewedContainer.defaultProps = {
     top: '',
     bottom: '',
     noMargin: false,
-    bgColor: 'grey'
+    bgColor: 'grey',
+    skew: 3
 };
 
 /***/ }),
