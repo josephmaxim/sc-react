@@ -496,10 +496,8 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _templateObject = _taggedTemplateLiteral(['\n            ', '\n            width: 100%;\n            position: relative;\n            background-color: ', ';\n            z-index: 2;\n            min-height: 200px;\n\n            &:before{\n                ', '\n                ', '\n            }\n            &:after {\n                ', '\n                ', '\n            }\n        '], ['\n            ', '\n            width: 100%;\n            position: relative;\n            background-color: ', ';\n            z-index: 2;\n            min-height: 200px;\n\n            &:before{\n                ', '\n                ', '\n            }\n            &:after {\n                ', '\n                ', '\n            }\n        ']),
-    _templateObject2 = _taggedTemplateLiteral(['\n            width: 100%;\n        '], ['\n            width: 100%;\n        ']);
+var _templateObject = _taggedTemplateLiteral(['\n        ', '\n        width: 100%;\n        position: relative;\n        background-color: ', ' !important;\n        z-index: 2;\n        min-height: 200px;\n\n        &:before{\n            ', '\n            ', '\n        }\n        &:after {\n            ', '\n            ', '\n        }\n    '], ['\n        ', '\n        width: 100%;\n        position: relative;\n        background-color: ', ' !important;\n        z-index: 2;\n        min-height: 200px;\n\n        &:before{\n            ', '\n            ', '\n        }\n        &:after {\n            ', '\n            ', '\n        }\n    ']),
+    _templateObject2 = _taggedTemplateLiteral(['\n        width: 100%;\n    '], ['\n        width: 100%;\n    ']);
 
 var _react = __webpack_require__(4);
 
@@ -517,88 +515,61 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var SkewedContainer = function SkewedContainer(props) {
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var SkewedContainer = function (_React$Component) {
-    _inherits(SkewedContainer, _React$Component);
-
-    function SkewedContainer() {
-        _classCallCheck(this, SkewedContainer);
-
-        return _possibleConstructorReturn(this, (SkewedContainer.__proto__ || Object.getPrototypeOf(SkewedContainer)).apply(this, arguments));
-    }
-
-    _createClass(SkewedContainer, [{
-        key: 'render',
-        value: function render() {
-            var _this2 = this;
-
-            var skew = function skew(propValue, position) {
-                var val = "",
-                    skewYDeg = "",
-                    skewPosition = "",
-                    skewProp = _this2.props.skew;
-                switch (propValue) {
-                    case "left":
-                        position === 'top' ? skewYDeg = -skewProp : skewYDeg = skewProp;
-                        skewPosition = "left";
-                        break;
-                    case "right":
-                        position === 'top' ? skewYDeg = skewProp : skewYDeg = -skewProp;
-                        skewPosition = "right";
-                        break;
-                    default:
-                        skewYDeg = "";
-                        skewPosition = "";
-                        break;
-                }
-                val = position + ':0; transform-origin: ' + skewPosition + ' ' + position + '; transform: skewY(' + skewYDeg + 'Deg);';
-                console.log(val);
-                return val;
-            };
-            var containerMargin = function containerMargin() {
-                var _props = _this2.props,
-                    top = _props.top,
-                    bottom = _props.bottom;
-
-                var marginTop = 0,
-                    marginBottom = 0;
-                var marginVal = 70;
-                if (top !== '') {
-                    marginTop = marginVal;
-                }
-                if (bottom !== '') {
-                    marginBottom = marginVal;
-                }
-                return 'margin: ' + marginTop + 'px 0px ' + marginBottom + 'px 0px;';
-            };
-            var commonStyling = '\n            content: \'\';\n            width: 100%;\n            height: 100%;\n            position: absolute;\n            background: inherit;\n            z-index: -1;\n        ';
-
-            var Container = _styledComponents2.default.div(_templateObject, !this.props.noMargin ? containerMargin : null, this.props.bgColor, commonStyling, skew(this.props.top, "top"), commonStyling, skew(this.props.bottom, "bottom"));
-
-            var Content = _styledComponents2.default.div(_templateObject2);
-
-            return _react2.default.createElement(
-                Container,
-                { style: this.props.style, className: this.props.className },
-                _react2.default.createElement(
-                    Content,
-                    null,
-                    this.props.children
-                )
-            );
+    var calculateSkew = function calculateSkew(propValue, position) {
+        var val = "",
+            skewYDeg = "",
+            skewPosition = "",
+            skewProp = props.skew;
+        switch (propValue) {
+            case "left":
+                position === 'top' ? skewYDeg = -skewProp : skewYDeg = skewProp;
+                skewPosition = "left";
+                break;
+            case "right":
+                position === 'top' ? skewYDeg = skewProp : skewYDeg = -skewProp;
+                skewPosition = "right";
+                break;
+            default:
+                skewYDeg = "";
+                skewPosition = "";
+                break;
         }
-    }]);
+        val = position + ':0; transform-origin: ' + skewPosition + ' ' + position + '; transform: skewY(' + skewYDeg + 'Deg);';
+        console.log(val);
+        return val;
+    };
 
-    return SkewedContainer;
-}(_react2.default.Component);
+    var containerMargin = function containerMargin() {
+        var marginTop = 0,
+            marginBottom = 0;
+        var marginVal = 70;
+        if (props.top !== '') {
+            marginTop = marginVal;
+        }
+        if (props.bottom !== '') {
+            marginBottom = marginVal;
+        }
+        return 'margin: ' + marginTop + 'px 0px ' + marginBottom + 'px 0px;';
+    };
 
-exports.default = SkewedContainer;
+    var commonStyling = '\n        content: \'\';\n        width: 100%;\n        height: 100%;\n        position: absolute;\n        background: inherit;\n        z-index: -1;\n    ';
 
+    var Container = _styledComponents2.default.div(_templateObject, !props.noMargin ? containerMargin() : null, props.bgColor, commonStyling, calculateSkew(props.top, "top"), commonStyling, calculateSkew(props.bottom, "bottom"));
+
+    var Content = _styledComponents2.default.div(_templateObject2);
+
+    return _react2.default.createElement(
+        Container,
+        { style: props.style, className: props.className },
+        _react2.default.createElement(
+            Content,
+            null,
+            props.children
+        )
+    );
+};
 
 SkewedContainer.propTypes = {
     className: _propTypes2.default.string,
@@ -619,6 +590,8 @@ SkewedContainer.defaultProps = {
     bgColor: 'grey',
     skew: 3
 };
+
+exports.default = SkewedContainer;
 
 /***/ }),
 /* 8 */
