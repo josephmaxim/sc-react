@@ -21,7 +21,6 @@ const SkewedContainer = (props) =>{
                 break;
         }
         val = `${position}:0; transform-origin: ${skewPosition} ${position}; transform: skewY(${skewYDeg}Deg);`;
-        console.log(val);
         return val;
     }
 
