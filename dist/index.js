@@ -497,7 +497,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _templateObject = _taggedTemplateLiteral(['\n        ', '\n        width: 100%;\n        position: relative;\n        background-color: ', ' !important;\n        z-index: 2;\n        min-height: 200px;\n\n        &:before{\n            ', '\n            ', '\n        }\n        &:after {\n            ', '\n            ', '\n        }\n    '], ['\n        ', '\n        width: 100%;\n        position: relative;\n        background-color: ', ' !important;\n        z-index: 2;\n        min-height: 200px;\n\n        &:before{\n            ', '\n            ', '\n        }\n        &:after {\n            ', '\n            ', '\n        }\n    ']),
-    _templateObject2 = _taggedTemplateLiteral(['\n        width: 100%;\n    '], ['\n        width: 100%;\n    ']);
+    _templateObject2 = _taggedTemplateLiteral(['\n        width: 100%;\n        overflow: auto;\n    '], ['\n        width: 100%;\n        overflow: auto;\n    ']);
 
 var _react = __webpack_require__(4);
 

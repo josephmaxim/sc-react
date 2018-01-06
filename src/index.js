@@ -65,6 +65,7 @@ const SkewedContainer = (props) =>{
 
     const Content = styled.div`
         width: 100%;
+        overflow: auto;
     `;
 
     return(
