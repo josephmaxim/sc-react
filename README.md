@@ -4,8 +4,9 @@ A react library for creating non-rectangular/slanted container divs.
 [![Build Status](https://travis-ci.org/josephmaxim/sc-react.svg?branch=master)](https://travis-ci.org/josephmaxim/sc-react)
 [![npm version](https://badge.fury.io/js/sc-react.svg)](https://badge.fury.io/js/sc-react)
 
+![Hero Image](./opt-res.gif)
 
-### Installation
+### Installation ([Medium post](https://medium.com/@josephmaxim/how-to-make-skewed-containers-in-react-3b92f1e2a74f))
 ```
 npm install --save sc-react
 ```
